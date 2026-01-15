@@ -1,7 +1,3 @@
-Here is the revitalized and visually exciting version of your **Jericho** README. I have added **status badges**, **structured tech-stack icons**, and **placeholder sections** for your project screenshots to make it look like a top-tier open-source project.
-
----
-
 # <p align="center">🚀 Jericho</p>
 <p align="center">
   <b>The Future of Multi-Chain AI-Powered Crypto Assistants</b><br>

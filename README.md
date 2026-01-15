@@ -75,8 +75,7 @@ Jericho is a cutting-edge decentralized finance assistant designed for the **Man
 
 ### 1. Installation
 ```bash
-git clone <repo-url>
-cd jericho-assistant
+git clone https://github.com/Marvellye/crypto-bot.git
 npm install
 ```
 
@@ -99,7 +98,7 @@ ENCRYPTION_KEY=your_secure_32_byte_key
 ### 3. Run the Engine
 ```bash
 # Start development server
-npm run dev
+node server.js
 ```
 
 ---
@@ -114,11 +113,24 @@ We take security seriously. Run our automated smoke tests to verify the integrit
 ---
 
 ## 🔐 Security Architecture
-Jericho uses an **"Encryption-at-Rest"** model. 
-1. **Wallet Generation**: A random seed is generated on the server.
-2. **AES-256-GCM**: The private key is encrypted with a unique IV (Initialization Vector).
-3. **Storage**: Only the `iv:tag:encrypted` string is stored in Supabase.
-4. **Decryption**: Keys are decrypted only in memory during a transaction and never logged.
+Jericho implements **"Encryption-at-Rest"** with zero-knowledge principles:
+
+1. **Wallet Generation**: Random seeds generated server-side with cryptographic strength
+2. **AES-256-GCM Encryption**: Each private key encrypted with:
+   - Unique IV (Initialization Vector)
+   - Authentication Tag for integrity verification
+   - ENCRYPTION_KEY from environment
+3. **Storage Format**: Only `iv:tag:encrypted` stored in database (never plaintext)
+4. **Decryption**: Keys decrypted only in-memory during transactions, never persisted to logs
+5. **Key Rotation**: Support for safe key rotation with re-encryption workflow
+
+### Verifying Encryption Integrity
+```bash
+# Scan all wallets for encryption validity
+node tests/scan_wallets.js
+```
+
+If issues are found, the report is saved to `tests/wallet_scan_report.json` with details on problematic wallets.
 
 ---
 
@@ -131,10 +143,12 @@ Jericho uses an **"Encryption-at-Rest"** model.
 ---
 
 ## 🤝 Contributing & Support
-Built with ❤️ for the **Mantle Hackathon**. If you find this project exciting, give it a ⭐!
+Built with ❤️ for the **Mantle Hackathon**. We welcome contributions!
 
-- **Questions?** Open an Issue.
-- **Security Flaws?** Please report privately to security@jericho.ai.
+- **Questions or Issues?** Open a GitHub Issue
+- **Bug Reports?** Include error logs and environment details
+- **Security Concerns?** Report privately to the maintainers
+- **Feature Requests?** Describe use cases and expected behavior
 
 ---
 

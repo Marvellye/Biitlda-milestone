@@ -37,15 +37,15 @@ Jericho is a cutting-edge decentralized finance assistant designed for the **Man
 ## 📸 Visuals & Demos
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400?text=Insert+Jericho+Web+Dashboard+Screenshot+Here" width="80%" alt="Jericho Dashboard">
+  <img src="./src/jericho.png" width="80%" alt="Jericho Dashboard">
   <br>
-  <i>Jericho Web Dashboard – Manage your multi-chain assets at a glance.</i>
+  <i>Jericho – Manage your multi-chain assets at a glance.</i>
 </p>
 
 <table align="center">
   <tr>
-    <td align="center"><img src="https://via.placeholder.com/250x500?text=Telegram+Chat+Mockup" width="200px"/><br><b>Telegram Interface</b></td>
-    <td align="center"><img src="https://via.placeholder.com/250x500?text=WhatsApp+Chat+Mockup" width="200px"/><br><b>WhatsApp Interface</b></td>
+    <td align="center"><img src="./src/telegram.jpg" width="200px"/><br><b>Telegram Interface</b></td>
+    <td align="center"><img src="./src/whatsapp.jpg" width="200px"/><br><b>WhatsApp Interface</b></td>
   </tr>
 </table>
 
